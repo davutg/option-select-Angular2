@@ -1,0 +1,28 @@
+<span>This is the most basic form of Option-Select</span>
+<option-select optionsUrl="data/pc.dat"
+               rows="6"
+               uniqueId="pc01">
+</option-select>
+<hr/>
+<span>With sort,select default, appear on the left, header, buttonName, editable options...</span>
+<option-select optionsUrl="data/pc.dat"
+               result="your text goes here" 
+               uniqueId="pc02"
+               header="Build Your Dream PC!"
+               buttonName="Pick"
+               sorted
+               editable="true"               
+               selectFirst="true"
+               positionClass="w3-left"
+               >
+</option-select>
+<hr/>
+<span>Drug instructions!</span>
+<option-select optionsUrl="data/options.json"
+               header="Instructions"
+               buttonName="Write Instruction"
+               editable="true"
+               sorted
+               selectFirst
+               uniqueId="ins01">
+</option-select>

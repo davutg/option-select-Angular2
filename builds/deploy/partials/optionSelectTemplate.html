@@ -1,0 +1,63 @@
+<div>
+    <div class="w3-row">
+        <div class="w3-col" style="width:auto;text-align:left">
+            <button [ngClass]="buttonClasses" style="width:auto" (click)="showModal(result)" [disabled]="isDisabled">
+                {{buttonName}}
+            </button>
+        </div>
+        <div class="w3-rest w3-container w3-margin-left">
+            <span *ngIf="!editable" style="vertical-align:middle">{{result}}</span>
+            <span *ngIf="editable" style="display:inline">
+                <input class="w3-input w3-rest" style="display:inline" 
+                       value="{{result}}"
+                       placeholder="enter value or choose..."/>
+            </span>
+        </div>
+    </div>
+    <div class="w3-modal w3-container w3-card-4" id="{{uniqueId}}" style="z-index: 100; position:absolute;">
+        <div class="w3-modal-content w3-animate-zoom {{positionClass}}" style="width:initial;display:table;">
+            <header class="w3-container w3-teal">
+                <span class="w3-closebtn w3-ripple"  (click)="closeModal()">&times;</span>
+                <h2>{{header}}</h2>
+            </header>
+            <form method="post">
+                <div class="w3-row-padding ">
+                    <div>
+                        <div *ngFor="#option of listOfOptions" style="display:inline-block">
+                            <div class="tooltip">
+                                <h3 style="margin:0">{{option.Header|trim:8}}</h3>
+                                <span class="tooltiptext">{{option.Header}}</span>
+                            </div>
+                            <select #selection class="form-control" [(ngModel)]="option.selection" (ngModelChange)="updateSelection($event)" size="{{rows}}" style="display:block; min-width:100px;margin:3px;position:sticky;border-radius:4px;border:1px solid #AAAAAA;vertical-align:top; overflow:hidden;">
+                                <option *ngFor="#opt of option.Options" value="{{opt.Value}}" >{{opt.Text}}</option>                           
+                            </select>
+                            <ul style="display:block;max-width:150px;text-align:left">
+                                <div class="tooltip">
+                                    <li>{{option.selection}}</li>
+                                    <span class="tooltiptext">
+                                         {{option.selection}}</span>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <footer class="w3-container w3-teal">
+                <p>
+                    <input type="submit" class="w3-btn w3-green w3-ripple" value="Select" (click)="select()" />
+                    <button type="button" class="w3-btn w3-red w3-ripple" (click)="closeModal()">Close</button>
+                </p>
+                <p>
+                    {{currentSelection}}
+                </p>
+            </footer>
+        </div>
+    </div>
+
+</div>
+
+<!--select class="w3-fourth" name="{{option.Header}}" ng-size="{{optionSize}}"
+                                    ng-model="option.selection"
+                                    ng-options="kv.Text for kv in option.Options|orderBy:'Text':false:excludeElementComparer"
+                                    ng-init="option.selection = selectFirst?(option.Options|orderBy:'Text':false:excludeElementComparer)[0]:null"
+                                    "></select-->
