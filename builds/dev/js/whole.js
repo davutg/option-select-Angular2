@@ -217,7 +217,7 @@ System.register("option-select.component", ['angular2/core', "optionService", "t
                         $('#' + this.uniqueId).css("display", "block");
                     };
                     if (!this.lazy) {
-                        showPopUp();
+                        showPopUp.bind(this)();
                     }
                     else {
                         this.load(showPopUp.bind(this));

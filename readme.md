@@ -8,16 +8,16 @@ Control has following properties;
 
 Property | Description | 
 --- | --- | ---
-`select-first` | **picks first available option** | 
-`editable="true"` | **allows manual text enterance** | 
-`header="Instrunctions"`| **sets modal header** | 
-`options-url="'/webApi/url'"`| **gather options from a json file or webapi** | 
-`lazy="true"`| **automatically loads values or wait for user trigger** | 
-`unique-id="myControlId"`| **sets a unique id for options modal (div)** | 
-`button-name="Pick Me!`| **sets name of picker button** | 
-`sorted="true"`| **sort options alphabetically** | 
-`rows="5"`| **number of rows to be shown in popup list (auto calculated by default)** | 
-`result="your text goes here"`| **produced result by #of picks** | 
+-`select-first` | **picks first available option** | 
+-`editable="true"` | **allows manual text enterance** | 
+-`header="Instrunctions"`| **sets modal header** | 
+-`options-url="'/webApi/url'"`| **gather options from a json file or webapi** | 
+-`lazy="true"`| **automatically loads values or wait for user trigger** | 
+-`unique-id="myControlId"`| **sets a unique id for options modal (div)** | 
+-`button-name="Pick Me!`| **sets name of picker button** | 
+-`sorted="true"`| **sort options alphabetically** | 
+-`rows="5"`| **number of rows to be shown in popup list (auto calculated by default)** | 
+-`result="your text goes here"`| **produced result by #of picks** | 
 ## Usage
 `
 <option-select header="Pick your dream PC!" button-name="Pick PC" options-url="'/data/pc.dat'" unique-id="pcContent">

@@ -93,7 +93,7 @@ constructor(private optionSrv:OptionService) {
                     };
             if(!this.lazy)
             {
-                showPopUp();                                  
+                showPopUp.bind(this)();                                  
             }else
             {
                 this.load(showPopUp.bind(this));
